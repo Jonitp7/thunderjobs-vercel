@@ -1,4 +1,4 @@
-@url=https://thunderjobs.vercel.app
+@url=https://thunderjobs-cyan.vercel.app
 ### GET para traer empresas
 GET {{url}}/api/empresas
 
@@ -13,7 +13,7 @@ Content-Type: application/json
 
 ### GET /perfil
 GET  {{url}}/api/usuarios/perfil
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDIyYTVhZmJkMTFhNjRiMDVkNDg4MCIsImlhdCI6MTcwODI4MDA4OCwiZXhwIjoxNzA4MjgzNjg4fQ.EzB5fjlkCXGa_B94bNCDYLFp4NMVPV_dSza1XwxGhwA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZGI4NjliZDI1NTgyYTA4ZWJmZTRhMSIsImlhdCI6MTcwODg5MDM3NX0.jjtNFUoy_wMwI4yteNTKbCqVyhYk2x4G8NrI_0hamis
 
 
 ### POST /login empresa

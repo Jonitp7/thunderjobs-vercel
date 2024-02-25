@@ -9,7 +9,7 @@ let urlVercel = "https://thunderjobs-cyan.vercel.app"
  */
 function cargarEmpresasFetch() {
     console.log("Traer empresas");
-    fetch(urlVercel + '/empresas')
+    fetch(urlVercel + '/api/empresas')
         .then(res => res.json())
         .then(empresas => {
             console.log(empresas);
