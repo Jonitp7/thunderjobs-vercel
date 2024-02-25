@@ -1,5 +1,6 @@
 //Fetch para cargar las empresas
 let urlFetch = "http://localhost:3001/api/empresas";
+let urlVercel = "https://thunderjobs.vercel.app"
 /**
  * Función para cargar las empresas utilizando Fetch API.
  * @function cargarEmpresasFetch
@@ -8,7 +9,7 @@ let urlFetch = "http://localhost:3001/api/empresas";
  */
 function cargarEmpresasFetch() {
     console.log("Traer empresas");
-    fetch(urlFetch)
+    fetch(urlVercel + '/empresas')
         .then(res => res.json())
         .then(empresas => {
             console.log(empresas);
