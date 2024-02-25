@@ -1,6 +1,6 @@
 //Fetch para cargar las empresas
 let urlFetch = "http://localhost:3001/api/empresas";
-let urlVercel = "https://thunderjobs.vercel.app"
+let urlVercel = "https://thunderjobs-cyan.vercel.app/"
 /**
  * Función para cargar las empresas utilizando Fetch API.
  * @function cargarEmpresasFetch
