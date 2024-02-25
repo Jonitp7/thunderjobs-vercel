@@ -32,7 +32,7 @@ function volverHome() {
  */
 function fVacantesCif(cif) {
     console.log("entra funcion fVacantesCif");
-    fetch(`http://localhost:3001/api/vacantes?cifEmpresa=${cif}`)
+    fetch(`https://thunderjobs-cyan.vercel.app/api/vacantes?cifEmpresa=${cif}`)
         .then(res => {
             if (!res.ok) {
                 throw new Error('Network response was not ok');
@@ -58,7 +58,7 @@ function fVacantesCif(cif) {
  */
 function fVacantesUbi(ubicacion) {
     console.log("entra funcion fVacantesUbicacion");
-    fetch(`http://localhost:3001/api/vacantes?ubicacion=${ubicacion}`)
+    fetch(`https://thunderjobs-cyan.vercel.app/api/vacantes?ubicacion=${ubicacion}`)
         .then(res => res.json())
         .then(vacantes => {
             console.log(vacantes);
@@ -79,7 +79,7 @@ function fVacantesUbi(ubicacion) {
  */
 function fVacantesCategoria(categoria) {
     console.log("entra funcion fVacantesCategoria");
-    fetch(`http://localhost:3001/api/vacantes?nombreCategoria=${categoria}`)
+    fetch(`https://thunderjobs-cyan.vercel.app/api/vacantes?nombreCategoria=${categoria}`)
         .then(res => res.json())
         .then(vacantes => {
             console.log(vacantes);
@@ -101,7 +101,7 @@ function buscarVacantes() {
     const ubicacion = document.getElementById('selectBuscador').value;
 
     // Construir la URL con los parámetros de búsqueda
-    let url = 'http://localhost:3001/api/vacantes';
+    let url = 'https://thunderjobs-cyan.vercel.app/api/vacantes';
     if (palabraClave || ubicacion) {
         url += '?';
         if (palabraClave) {
@@ -284,7 +284,7 @@ function cargarVacantes(currentPage, pageSize) {
  */
 function modalVacante(idVacante) {
     console.log(idVacante)
-    fetch(`http://localhost:3001/api/vacantes/${idVacante}`)
+    fetch(`https://thunderjobs-cyan.vercel.app/api/vacantes/${idVacante}`)
         .then(res => res.json())
         .then(vacante => {
             let divModal = document.getElementById("divModal")
@@ -370,7 +370,7 @@ async function enviarSolicitudFetch(idVacante) {
 
     try {
         // Realizar la solicitud para obtener la vacante
-        const responseVacante = await fetch(`http://localhost:3001/api/vacantes/${idVacante}`);
+        const responseVacante = await fetch(`https://thunderjobs-cyan.vercel.app/api/vacantes/${idVacante}`);
         
         if (!responseVacante.ok) {
             throw new Error('Error en la solicitud de la vacante');
@@ -383,7 +383,7 @@ async function enviarSolicitudFetch(idVacante) {
         if (token) {
             console.log("Token home", token);
             // Realizar la solicitud para obtener el perfil del usuario
-            const responseUsuario = await fetch('http://localhost:3001/api/usuarios/perfil', {
+            const responseUsuario = await fetch('https://thunderjobs-cyan.vercel.app/api/usuarios/perfil', {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${token}` // Incluir el token en el encabezado de autorización
@@ -413,7 +413,7 @@ async function enviarSolicitudFetch(idVacante) {
         formData.append('usuario_id', idUsuario);
 
         // Realizar la solicitud para enviar la nueva solicitud con el archivo
-        const responseSolicitud = await fetch('http://localhost:3001/api/solicitudes/', {
+        const responseSolicitud = await fetch('https://thunderjobs-cyan.vercel.app/api/solicitudes/', {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${token}` // Incluir el token en el encabezado de autorización

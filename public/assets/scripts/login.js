@@ -48,7 +48,7 @@ function loginUsuario() {
     };
 
     // Configurar la solicitud fetch para el inicio de sesión de usuario
-    fetch('http://localhost:3001/api/usuarios/login', {
+    fetch('https://thunderjobs-cyan.vercel.app/api/usuarios/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -98,7 +98,7 @@ function loginEmpresa() {
     };
 
     // Configurar la solicitud fetch para el inicio de sesión de empresa
-    fetch('http://localhost:3001/api/empresas/login', {
+    fetch('https://thunderjobs-cyan.vercel.app/api/empresas/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -160,7 +160,7 @@ function registroUsuario(){
     };
 
     // Configurar la solicitud fetch para el registro de usuario
-    fetch('http://localhost:3001/api/usuarios', {
+    fetch('https://thunderjobs-cyan.vercel.app/api/usuarios', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -230,7 +230,7 @@ function registroEmpresas(){
     formData.append('archivo', imagen); 
 
     // Configurar la solicitud fetch para el registro de empresa
-    fetch('http://localhost:3001/api/empresas', {
+    fetch('https://thunderjobs-cyan.vercel.app/api/empresas', {
         method: 'POST',
         headers: {
         },
@@ -289,7 +289,7 @@ function obtenerInformacionUsuario(token) {
 
     if(tipoUsuario == "Usuario"){
         divUsuario.style.display = "flex";
-        fetch('http://localhost:3001/api/usuarios/perfil', {
+        fetch('https://thunderjobs-cyan.vercel.app/api/usuarios/perfil', {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}` // Incluir el token en el encabezado de autorización
@@ -309,7 +309,7 @@ function obtenerInformacionUsuario(token) {
         });
     } else if(tipoUsuario == "Empresa"){
         divEmpresa.style.display = "flex";
-        fetch('http://localhost:3001/api/empresas/perfil', {
+        fetch('https://thunderjobs-cyan.vercel.app/api/empresas/perfil', {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}` // Incluir el token en el encabezado de autorización

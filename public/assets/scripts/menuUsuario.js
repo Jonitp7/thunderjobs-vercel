@@ -31,7 +31,7 @@ async function cargarSolicitudesFetch() {
     
     try {
         // Obtiene el perfil del usuario haciendo una solicitud GET al servidor.
-        const response = await fetch('http://localhost:3001/api/usuarios/perfil', {
+        const response = await fetch('https://thunderjobs-cyan.vercel.app/api/usuarios/perfil', {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}` // Incluye el token en el encabezado de autorización
@@ -53,7 +53,7 @@ async function cargarSolicitudesFetch() {
         divSolicitudes.innerHTML = "";
 
         // Obtiene las solicitudes del usuario haciendo una solicitud GET al servidor.
-        const res = await fetch(`http://localhost:3001/api/solicitudes/usuario/${idUsuario}`, {
+        const res = await fetch(`https://thunderjobs-cyan.vercel.app/api/solicitudes/usuario/${idUsuario}`, {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}` // Incluye el token en el encabezado de autorización
@@ -154,7 +154,7 @@ async function cancelarSolicitud(idSolicitud){
     const token = localStorage.getItem('token'); // Obtiene el token de autenticación del almacenamiento local
     try {
         // Define la URL del endpoint del servidor para cambiar el estado de la solicitud.
-        const url = `http://localhost:3001/api/solicitudes/estado/${idSolicitud}`;
+        const url = `https://thunderjobs-cyan.vercel.app/api/solicitudes/estado/${idSolicitud}`;
         
         // Define el cuerpo de la solicitud PATCH para cambiar el estado de la solicitud a 3 (cancelada).
         const body = JSON.stringify({ nuevoEstado: 3});

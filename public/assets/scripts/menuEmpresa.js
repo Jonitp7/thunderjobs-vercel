@@ -43,7 +43,7 @@ function cambiarOpcion(opcion){
  * @function cargarSolicitudesEmpresa
  */
 function cargarSolicitudesEmpresa(){
-    fetch(`http://localhost:3001/api/solicitudes/empresa/${cifEmpresa}`)
+    fetch(`https://thunderjobs-cyan.vercel.app/api/solicitudes/empresa/${cifEmpresa}`)
     .then(res => res.json())
     .then(solicitudes => {
         let divGestionarSolicitudes = document.getElementById("divGestionarSolicitudes");
@@ -131,7 +131,7 @@ function cargarSolicitudesEmpresa(){
  * @function cargarVacantesEmpresa
  */
 function cargarVacantesEmpresa(){
-    fetch(`http://localhost:3001/api/vacantes/empresa/${cifEmpresa}`)
+    fetch(`https://thunderjobs-cyan.vercel.app/api/vacantes/empresa/${cifEmpresa}`)
     .then(res => res.json())
     .then(vacantes => {
         let arrayVacantes = vacantes.vacantes;
@@ -258,7 +258,7 @@ function crearVacante(){
 
     const token = localStorage.getItem('token');
 
-    fetch('http://localhost:3001/api/vacantes', {
+    fetch('https://thunderjobs-cyan.vercel.app/api/vacantes', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -290,7 +290,7 @@ let cifEmpresa;
  */
 function comprobarTokenEmpresa() {
     const token = localStorage.getItem('token');
-    fetch('http://localhost:3001/api/empresas/perfil', {
+    fetch('https://thunderjobs-cyan.vercel.app/api/empresas/perfil', {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}` // Incluir el token en el encabezado de autorización
@@ -325,7 +325,7 @@ async function gestionarSolicitud(idSolicitud, estado){
 
     try {
         // Definir la URL del endpoint del servidor
-        const url = `http://localhost:3001/api/solicitudes/estado/${idSolicitud}`;
+        const url = `https://thunderjobs-cyan.vercel.app/api/solicitudes/estado/${idSolicitud}`;
         
         // Definir el cuerpo de la solicitud PATCH
         const body = JSON.stringify({ nuevoEstado: estado});
@@ -363,7 +363,7 @@ async function gestionarSolicitud(idSolicitud, estado){
  * @param {string} vacanteId - El ID de la vacante a cancelar.
  */
 function cancelarVacante(vacanteId) {
-    fetch(`http://localhost:3001/api/vacantes/${vacanteId}`, {
+    fetch(`https://thunderjobs-cyan.vercel.app/api/vacantes/${vacanteId}`, {
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json'
@@ -388,7 +388,7 @@ function cancelarVacante(vacanteId) {
  */
 function modificarVacante(vacanteId) {
     const token = localStorage.getItem('token');
-    const url = `http://localhost:3001/api/vacantes/modificar/${vacanteId}`;
+    const url = `https://thunderjobs-cyan.vercel.app/api/vacantes/modificar/${vacanteId}`;
     const headers = {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}`
@@ -462,7 +462,7 @@ function modificarVacante(vacanteId) {
  * @param {string} username - El nombre de usuario asociado a la solicitud.
  */
 function descargarArchivo(idSolicitud, username) {
-    fetch(`http://localhost:3001/api/solicitudes/descargar/${idSolicitud}`)
+    fetch(`https://thunderjobs-cyan.vercel.app/api/solicitudes/descargar/${idSolicitud}`)
         .then(response => {
             // Verificar si la respuesta es exitosa
             if (!response.ok) {
